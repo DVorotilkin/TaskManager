@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "dbmanager.h"
 
 namespace Ui {
 class MainWindow;
