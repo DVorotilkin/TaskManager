@@ -7,6 +7,7 @@
 QT += core gui
 QT += sql
 QT += charts
+QT += network widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,14 +28,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
     dbmanager.cpp \
-    task.cpp
+    task.cpp \
+    networkmanager.cpp \
+    Forms/mainwindow.cpp \
+    Forms/addtaskdialog.cpp \
+    Forms/exportsettings.cpp \
+    Forms/addclientdialog.cpp
 
 HEADERS += \
-        mainwindow.h \
     dbmanager.h \
-    task.h
+    task.h \
+    networkmanager.h \
+    Forms/mainwindow.h \
+    Forms/addtaskdialog.h \
+    Forms/exportsettings.h \
+    Forms/addclientdialog.h
 
 FORMS += \
-        mainwindow.ui
+    Forms/mainwindow.ui \
+    Forms/addtaskdialog.ui \
+    Forms/exportsrttings.ui \
+    Forms/addclientdialog.ui
