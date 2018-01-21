@@ -87,7 +87,7 @@ int DBManager::addTask(const QString & _description, const QString &_implementer
 {
 
     QSqlQuery q(db);
-    q.prepare("INSERT INTO Tasks (Description, Implementer, Date, Local)"
+    q.prepare("INSERT INTO Tasks (Description, Implementer, Date, Local) "
               "VALUES (:description, :implementer, :date, :local);");
 
     q.bindValue(":description", _description);
@@ -114,7 +114,7 @@ void DBManager::addTask(const Task &task)
 int DBManager::addClient(const QString &name, const QString &ip)
 {
     QSqlQuery q(db);
-    q.prepare("INSERT INTO Clients (Name, IP)"
+    q.prepare("INSERT INTO Clients (Name, IP) "
               "VALUES (:name, :ip);");
 
     q.bindValue(":name", name);
@@ -131,7 +131,7 @@ int DBManager::addClient(const QString &name, const QString &ip)
 void DBManager::deleteClient(int id)
 {
     QSqlQuery q(db);
-    q.prepare("DELETE INTO Clients "
+    q.prepare("DELETE FROM Clients "
               "WHERE (Id == :id);");
     q.bindValue(":id", id);
     state = q.exec();

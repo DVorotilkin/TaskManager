@@ -37,6 +37,11 @@ void MainWindow::addTask(const QString &description, const QString &implementer,
 
 }
 
+void MainWindow::setPort(const int port)
+{
+    settings.setValue("port", port);
+}
+
 void MainWindow::on_openAction_triggered()
 {
     auto dbFileNAme = QFileDialog::getOpenFileName(this, "Открыть БД", "", "*.db");
@@ -98,7 +103,7 @@ void MainWindow::displayError(QString message)
 
 void MainWindow::on_expSettingsAction_triggered()
 {
-    ExportSettings *expSettings = new ExportSettings(dbManager, this);
+    ExportSettings *expSettings = new ExportSettings(dbManager, networkManager, this);
     expSettings->show();
 }
 

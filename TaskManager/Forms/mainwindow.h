@@ -23,6 +23,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void addTask(const QString & description, const QString & implementer, const QDate & date, bool local);
+    void setPort(const int port);
 private slots:
     void on_openAction_triggered();
 
